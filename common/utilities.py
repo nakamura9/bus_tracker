@@ -1,5 +1,13 @@
 import datetime
 
+class ExtraContext(object):
+    extra_context = {}
+    
+    def get_context_data(self, **kwargs):
+        context = super(ExtraContext, self).get_context_data(**kwargs)
+        context.update(self.extra_context)
+        return context
+
 def time_choices(start, stop, interval, delta=False):
     """
     Creates a list of times between start and stop separated by interval.

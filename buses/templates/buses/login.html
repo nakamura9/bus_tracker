@@ -1,0 +1,30 @@
+{% extends "window.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-3">Bus Tracker Admin</h1>
+    <p class="lead">Login Portal for Tracker Admins</p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h4 class="card-title">Login Form</h4>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button class="btn btn-default">Log in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<script>
+        $('input').addClass('form-control');
+    </script>
+{% endblock content %}

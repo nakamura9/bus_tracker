@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/buses/dashboard'
+
 
 # Application definition
 
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'buses',
     'clients',
-    'common'
+    'common',
+    'webpack_loader'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'common', 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'js/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'assets', 'js', 'webpack-stats.json'),
+    }
+}
