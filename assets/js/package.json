@@ -1,0 +1,24 @@
+{
+  "name": "bus_tracker",
+  "version": "0.0.1",
+  "description": "dashboard for bus tracking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "caleb kandoro",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jquery": "^3.3.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router": "^4.3.1",
+    "webpack": "^4.17.1",
+    "webpack-bundle-tracker": "^0.3.0"
+  }
+}
