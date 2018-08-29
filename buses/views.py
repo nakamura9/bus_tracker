@@ -5,14 +5,22 @@ import json
 import urllib
 from django.contrib import messages
 from . import forms
+from . import serializers
+from . import models
 from django.urls import reverse_lazy
-from common.utilities import ExtraContext 
+from common.utilities import ExtraContext
+from rest_framework.viewsets import ModelViewSet
+
+
 
 
 from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, FormView
 
 CREATE_TEMPLATE = os.path.join('common', 'create_template.html')
+
+class POSView(TemplateView):
+    template_name = os.path.join('buses', 'POS.html')
 
 class BusTrackerAdminDashBoard(TemplateView):
     template_name = os.path.join('buses', 'dashboard.html')
@@ -85,3 +93,6 @@ class BusDetailView():
 class BusListView():
     pass
 
+class TripAPIView(ModelViewSet):
+    serializer_class = serializers.TripSerializer
+    queryset = models.Trip.objects.all()

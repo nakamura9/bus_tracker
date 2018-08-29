@@ -31,6 +31,8 @@ class Trip(models.Model):
         (4, 'En Route'),
         (5, 'Completed'),
     ]
+    name = models.CharField(max_length=255, default="")
+    description = models.TextField(blank=True, default="")
     schedule =models.ForeignKey('buses.BusSchedule', on_delete=None)
     status = models.PositiveIntegerField(choices = STATUSES)
     # if recurring this is the datum date other trips are scheduled from

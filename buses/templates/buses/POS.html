@@ -1,0 +1,28 @@
+{% extends "window.html" %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-3">Tracking Ticket POS</h1>
+    <p class="lead">Generate Tokens for Bus Tracking</p>
+    <hr class="my-2">
+    <!--
+        <p>More info</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+        </p>
+    -->
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="pos-app"></div>
+        </div>
+    </div>
+</div>
+
+
+{% render_bundle "pos" %}
+{% endblock %}

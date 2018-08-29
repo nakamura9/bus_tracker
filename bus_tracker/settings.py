@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'buses',
     'clients',
     'common',
-    'webpack_loader'
+    'webpack_loader',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
