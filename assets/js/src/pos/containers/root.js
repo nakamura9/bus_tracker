@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {SearchableWidget} from '../components/common';
 import TextBoxListWidget from '../components/text_box_list';
+//import Keypad from '../components/keypad';
+import TouchController from './touchController';
 
 class POSRoot extends Component{
     state = {
@@ -71,6 +73,7 @@ class POSRoot extends Component{
                 </select>
 
                 <h3>Alert Phone Numbers</h3>
+                <TouchController />
                 <TextBoxListWidget 
                         populatedURL ={null}
                         fieldName="phone_numbers"/>
